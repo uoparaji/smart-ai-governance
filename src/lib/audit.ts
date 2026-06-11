@@ -10,7 +10,7 @@ export async function logAudit(action: string, objectType?: string, objectId?: s
       action,
       object_type: objectType ?? null,
       object_id: objectId ?? null,
-      details: details ?? null,
+      details: (details ?? null) as any,
     });
   } catch (e) {
     console.error("audit log failed", e);
